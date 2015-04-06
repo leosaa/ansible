@@ -1,0 +1,7 @@
+- hosts: rpm
+  sudo: true
+  tasks:
+   - name: updates a server
+     yum: name='*'
+          state=latest
+     when: ansible_distribution == 'CentOS' and ansible_distribution_version == '5.8'
